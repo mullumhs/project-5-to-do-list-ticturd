@@ -6,6 +6,7 @@
 - Class: Software Engineering
 - Description: Complete a functional dice roller app in Python.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+import time
 #make a list
 #allow user to add variables to the list
 #allow user to delete variables from the list
@@ -19,6 +20,9 @@ def menu():
     print("1. Add something to the list")
     print("2. Delete something from the list")
     print("3. Edit something from the list")
+    print("4. View list")
+
+
 
 def choice():
     while True:
@@ -29,6 +33,8 @@ def choice():
                 if choice == 2:
                     return choice
                 if choice == 3:
+                    return choice
+                if choice == 4:
                     return choice
                 else:
                     print("Please enter a number between 1 and 3")
@@ -48,7 +54,18 @@ def delete():
 
 def edit():
     print("What would you like to edit?")
-    edit = input()    
+    remove = todolist.index(input())
+
+    print("Enter your replacement")
+    add = input()
+
+    todolist[remove] = add
+
+
+def viewlist():
+    for i, item in enumerate(todolist):
+        print(f"{i + 1}. {item}")
+        time.sleep(1)
 
 while True:
     menu()
@@ -57,7 +74,11 @@ while True:
         add()
     if ch == 2:
         delete()
-    print(f"Current list: {todolist}")
+    if ch == 3:
+        edit()
+    if ch == 4:
+        viewlist()
+
     
 
 
