@@ -48,18 +48,35 @@ def add():
     todolist.append(addtolist)
 
 def delete():
-    print("What would you like to delete from your list?")
-    deletefromlist = input()
-    todolist.remove(deletefromlist)
+    while True:
+        print("What would you like to delete from your list?")
+        deletefromlist = input()
+        if deletefromlist == "get me out":
+            run()
+            break
+        try:
+            todolist.remove(deletefromlist)
+        except:
+            print("Please enter a valid item (Or type the phrase 'get me out' to return to the program)")
 
 def edit():
-    print("What would you like to edit?")
-    remove = todolist.index(input())
+    while True:
+        print("What would you like to edit?")
+        removevalue = input()
+        if removevalue == "get me out":
+            run()
+            break
+        try:
+            remove = todolist.index(removevalue)
 
-    print("Enter your replacement")
-    add = input()
+            print("Enter your replacement")
+            add = input()
+            
+            todolist[remove] = add
+        except:
+            print("Please enter a valid item to edit and try again (Or type the phrase 'get me out' to return to the menu)")
 
-    todolist[remove] = add
+
 
 
 def viewlist():
@@ -67,20 +84,21 @@ def viewlist():
         print(f"{i + 1}. {item}")
         time.sleep(1)
 
-while True:
-    menu()
-    ch = choice()
-    if ch == 1:
-        add()
-    if ch == 2:
-        delete()
-    if ch == 3:
-        edit()
-    if ch == 4:
-        viewlist()
+def run():
+    while True:
+        menu()
+        ch = choice()
+        if ch == 1:
+            add()
+        if ch == 2:
+            delete()
+        if ch == 3:
+            edit()
+        if ch == 4:
+            viewlist()
 
     
-
+run()
 
 
 
