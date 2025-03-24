@@ -16,6 +16,7 @@ todolist = []
 
 
 def menu():
+    print("\n \n \n \n \n \n \n \n \n \n \n \n ")
     print("Please select an option:")
     print("1. Add something to the list")
     print("2. Delete something from the list")
