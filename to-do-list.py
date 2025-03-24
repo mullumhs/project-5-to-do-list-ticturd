@@ -21,26 +21,26 @@ def menu():
     print("2. Delete something from the list")
     print("3. Edit something from the list")
     print("4. View list")
-
+    
 
 
 def choice():
     while True:
-            try:
-                choice = int(input())
-                if choice == 1:
-                    return choice
-                if choice == 2:
-                    return choice
-                if choice == 3:
-                    return choice
-                if choice == 4:
-                    return choice
-                else:
-                    print("Please enter a number between 1 and 3")
+        try:
+            choice = int(input())
+            if choice == 1:
+                return choice
+            if choice == 2:
+                return choice
+            if choice == 3:
+                return choice
+            if choice == 4:
+                return choice
+            else:
+                print("Please enter a number between 1 and 4")
 
-            except:
-                print("Please enter a valid number.")
+        except:
+            print("Please enter a valid number.")
 
 def add():
     print("What would you like to add to your list?")
