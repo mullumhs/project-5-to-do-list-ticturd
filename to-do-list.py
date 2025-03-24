@@ -21,7 +21,7 @@ def menu():
     print("2. Delete something from the list")
     print("3. Edit something from the list")
     print("4. View list")
-    
+
 
 
 def choice():
@@ -99,6 +99,3 @@ def run():
 
     
 run()
-
-
-
